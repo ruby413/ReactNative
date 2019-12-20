@@ -8,4 +8,4 @@
 <br/>
 <br/>
 sample
-![ex_screenshot](./assets/screen.png)
+![ex_screenshot](assets/screen.png)
