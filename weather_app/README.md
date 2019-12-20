@@ -5,3 +5,7 @@
 ## :desktop_computer: Nomad Coder Weather App
 - using api :  https://openweathermap.org/
 - using icon : @expo/vector-icons - MaterialCommunityIcons
+<br/>
+<br/>
+sample
+![ex_screenshot](./assets/screen.png)
