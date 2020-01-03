@@ -1,0 +1,4 @@
+prisma.yml
+generated
+.env
+*.tgz
