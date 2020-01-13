@@ -1430,6 +1430,7 @@ type User {
   likes(where: LikeWhereInput, orderBy: LikeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Like!]
   comments(where: CommentWhereInput, orderBy: CommentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Comment!]
   rooms(where: RoomWhereInput, orderBy: RoomOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Room!]
+  loginSecret: String
 }
 
 type UserConnection {
@@ -1451,6 +1452,7 @@ input UserCreateInput {
   likes: LikeCreateManyWithoutUserInput
   comments: CommentCreateManyWithoutUserInput
   rooms: RoomCreateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserCreateManyWithoutFollowersInput {
@@ -1500,6 +1502,7 @@ input UserCreateWithoutCommentsInput {
   posts: PostCreateManyWithoutUserInput
   likes: LikeCreateManyWithoutUserInput
   rooms: RoomCreateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserCreateWithoutFollowersInput {
@@ -1514,6 +1517,7 @@ input UserCreateWithoutFollowersInput {
   likes: LikeCreateManyWithoutUserInput
   comments: CommentCreateManyWithoutUserInput
   rooms: RoomCreateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserCreateWithoutFollowingInput {
@@ -1528,6 +1532,7 @@ input UserCreateWithoutFollowingInput {
   likes: LikeCreateManyWithoutUserInput
   comments: CommentCreateManyWithoutUserInput
   rooms: RoomCreateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserCreateWithoutLikesInput {
@@ -1542,6 +1547,7 @@ input UserCreateWithoutLikesInput {
   posts: PostCreateManyWithoutUserInput
   comments: CommentCreateManyWithoutUserInput
   rooms: RoomCreateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserCreateWithoutPostsInput {
@@ -1556,6 +1562,7 @@ input UserCreateWithoutPostsInput {
   likes: LikeCreateManyWithoutUserInput
   comments: CommentCreateManyWithoutUserInput
   rooms: RoomCreateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserCreateWithoutRoomsInput {
@@ -1570,6 +1577,7 @@ input UserCreateWithoutRoomsInput {
   posts: PostCreateManyWithoutUserInput
   likes: LikeCreateManyWithoutUserInput
   comments: CommentCreateManyWithoutUserInput
+  loginSecret: String
 }
 
 type UserEdge {
@@ -1590,6 +1598,8 @@ enum UserOrderByInput {
   lastName_DESC
   bio_ASC
   bio_DESC
+  loginSecret_ASC
+  loginSecret_DESC
 }
 
 type UserPreviousValues {
@@ -1599,6 +1609,7 @@ type UserPreviousValues {
   firstName: String
   lastName: String
   bio: String
+  loginSecret: String
 }
 
 input UserScalarWhereInput {
@@ -1686,6 +1697,20 @@ input UserScalarWhereInput {
   bio_not_starts_with: String
   bio_ends_with: String
   bio_not_ends_with: String
+  loginSecret: String
+  loginSecret_not: String
+  loginSecret_in: [String!]
+  loginSecret_not_in: [String!]
+  loginSecret_lt: String
+  loginSecret_lte: String
+  loginSecret_gt: String
+  loginSecret_gte: String
+  loginSecret_contains: String
+  loginSecret_not_contains: String
+  loginSecret_starts_with: String
+  loginSecret_not_starts_with: String
+  loginSecret_ends_with: String
+  loginSecret_not_ends_with: String
   AND: [UserScalarWhereInput!]
   OR: [UserScalarWhereInput!]
   NOT: [UserScalarWhereInput!]
@@ -1721,6 +1746,7 @@ input UserUpdateDataInput {
   likes: LikeUpdateManyWithoutUserInput
   comments: CommentUpdateManyWithoutUserInput
   rooms: RoomUpdateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserUpdateInput {
@@ -1735,6 +1761,7 @@ input UserUpdateInput {
   likes: LikeUpdateManyWithoutUserInput
   comments: CommentUpdateManyWithoutUserInput
   rooms: RoomUpdateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserUpdateManyDataInput {
@@ -1743,6 +1770,7 @@ input UserUpdateManyDataInput {
   firstName: String
   lastName: String
   bio: String
+  loginSecret: String
 }
 
 input UserUpdateManyMutationInput {
@@ -1751,6 +1779,7 @@ input UserUpdateManyMutationInput {
   firstName: String
   lastName: String
   bio: String
+  loginSecret: String
 }
 
 input UserUpdateManyWithoutFollowersInput {
@@ -1833,6 +1862,7 @@ input UserUpdateWithoutCommentsDataInput {
   posts: PostUpdateManyWithoutUserInput
   likes: LikeUpdateManyWithoutUserInput
   rooms: RoomUpdateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserUpdateWithoutFollowersDataInput {
@@ -1846,6 +1876,7 @@ input UserUpdateWithoutFollowersDataInput {
   likes: LikeUpdateManyWithoutUserInput
   comments: CommentUpdateManyWithoutUserInput
   rooms: RoomUpdateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserUpdateWithoutFollowingDataInput {
@@ -1859,6 +1890,7 @@ input UserUpdateWithoutFollowingDataInput {
   likes: LikeUpdateManyWithoutUserInput
   comments: CommentUpdateManyWithoutUserInput
   rooms: RoomUpdateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserUpdateWithoutLikesDataInput {
@@ -1872,6 +1904,7 @@ input UserUpdateWithoutLikesDataInput {
   posts: PostUpdateManyWithoutUserInput
   comments: CommentUpdateManyWithoutUserInput
   rooms: RoomUpdateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserUpdateWithoutPostsDataInput {
@@ -1885,6 +1918,7 @@ input UserUpdateWithoutPostsDataInput {
   likes: LikeUpdateManyWithoutUserInput
   comments: CommentUpdateManyWithoutUserInput
   rooms: RoomUpdateManyWithoutParticipantsInput
+  loginSecret: String
 }
 
 input UserUpdateWithoutRoomsDataInput {
@@ -1898,6 +1932,7 @@ input UserUpdateWithoutRoomsDataInput {
   posts: PostUpdateManyWithoutUserInput
   likes: LikeUpdateManyWithoutUserInput
   comments: CommentUpdateManyWithoutUserInput
+  loginSecret: String
 }
 
 input UserUpdateWithWhereUniqueWithoutFollowersInput {
@@ -2056,6 +2091,20 @@ input UserWhereInput {
   rooms_every: RoomWhereInput
   rooms_some: RoomWhereInput
   rooms_none: RoomWhereInput
+  loginSecret: String
+  loginSecret_not: String
+  loginSecret_in: [String!]
+  loginSecret_not_in: [String!]
+  loginSecret_lt: String
+  loginSecret_lte: String
+  loginSecret_gt: String
+  loginSecret_gte: String
+  loginSecret_contains: String
+  loginSecret_not_contains: String
+  loginSecret_starts_with: String
+  loginSecret_not_starts_with: String
+  loginSecret_ends_with: String
+  loginSecret_not_ends_with: String
   AND: [UserWhereInput!]
   OR: [UserWhereInput!]
   NOT: [UserWhereInput!]
